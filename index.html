@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>GUESS THE NUMBER</h1>
+        <div class="o">
+            <input id="one" placeholder="Enter the number">
+            <button onclick="check()">CHECK</button>
+            <h2 id="A">Result</h2>
+        </div>
+    </body>
+</html>
+<style>
+    body{
+        margin: 0;
+        padding: 200px;
+        background: radial-gradient(circle, #ca4ff0,#5ac0f0,#fa30ce);
+    }
+    h1{
+        color: beige;
+        text-align: center;
+    }
+    .o{
+        background: linear-gradient(to right,#aaeefa,#ef7bfe);
+        margin:auto;
+        padding:50px;
+        width: 300px;
+        height: 100px;
+        text-align: center;
+    }
+    h2{
+        color: rgb(18,117,247);
+        text-align: center;
+    }
+    button{
+        background-color:#440909 ;
+        color: aliceblue;
+    }
+    button:hover{
+        background-color: rgb(216, 102, 8);
+        color: rgb(220, 221, 221);
+    }
+</style>
+<script>
+    var x=document.getElementById("one")
+    var y=document.getElementById("A")
+    var r=Math.floor(Math.random()*100+1)
+    function check()
+    {
+        var n=x.value
+        if(n==r)
+    {
+        y.textContent="Right"
+        document.body.style.background = "radial-gradient(circle,#80f711,#6839eb,#e2bb0b)";
+
+    } 
+    else if (n < r) 
+    {
+        y.textContent = " Too Low!";
+    } 
+    else if (n > r) {
+         y.textContent = "Too High!";
+    }
+    
+    }
+</script>
